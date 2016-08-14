@@ -1,22 +1,16 @@
 package space.cyclic.reference.soundbite.app;
 
-import java.util.Locale;
-
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.support.v7.app.ActionBarActivity;
+import android.view.*;
+import android.widget.Toast;
+
+import java.util.Locale;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -47,6 +41,11 @@ public class MainActivity extends ActionBarActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+        myFavorite = MediaPlayer.create(this, R.raw.oh_my_favorite);
+        iBrokeMyBack = MediaPlayer.create(this, R.raw.i_broke_my_back);
+        backIsBroken = MediaPlayer.create(this, R.raw.back_is_broken);
+        spinal = MediaPlayer.create(this, R.raw.spinal);
 
     }
 
@@ -143,4 +142,24 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    MediaPlayer myFavorite;
+    public void myFavorite(View view) {
+        myFavorite.start();
+        Toast.makeText(this, "OH MY FAVORITE", Toast.LENGTH_LONG).show();
+    }
+
+    MediaPlayer iBrokeMyBack;
+    public void iBrokeMyBack(View view) {
+        iBrokeMyBack.start();
+    }
+
+    MediaPlayer backIsBroken;
+    public void backIsBroken(View view){
+        backIsBroken.start();
+    }
+
+    MediaPlayer spinal;
+    public void spinal(View view){
+        spinal.start();
+    }
 }
