@@ -46,7 +46,9 @@ public class MainActivity extends ActionBarActivity {
         iBrokeMyBack = MediaPlayer.create(this, R.raw.i_broke_my_back);
         backIsBroken = MediaPlayer.create(this, R.raw.back_is_broken);
         spinal = MediaPlayer.create(this, R.raw.spinal);
-
+        crystalLight = MediaPlayer.create(this, R.raw.crystal_light);
+        smartEnough = MediaPlayer.create(this, R.raw.smart_enough);
+        aaron = MediaPlayer.create(this, R.raw.aaron);
     }
 
     @Override
@@ -137,29 +139,58 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
+            return inflater.inflate(R.layout.fragment_main, container, false);
         }
     }
 
     MediaPlayer myFavorite;
+
     public void myFavorite(View view) {
-        myFavorite.start();
-        Toast.makeText(this, "OH MY FAVORITE", Toast.LENGTH_LONG).show();
+        if (!myFavorite.isPlaying()) {
+            myFavorite.start();
+            Toast.makeText(this, "OH MY FAVORITE", Toast.LENGTH_LONG).show();
+        }
     }
 
     MediaPlayer iBrokeMyBack;
+
     public void iBrokeMyBack(View view) {
-        iBrokeMyBack.start();
+        playMedia(iBrokeMyBack);
     }
 
     MediaPlayer backIsBroken;
-    public void backIsBroken(View view){
-        backIsBroken.start();
+
+    public void backIsBroken(View view) {
+        playMedia(backIsBroken);
     }
 
     MediaPlayer spinal;
-    public void spinal(View view){
-        spinal.start();
+
+    public void spinal(View view) {
+        playMedia(spinal);
+    }
+
+    MediaPlayer crystalLight;
+
+    public void crystalLight(View view) {
+        playMedia(crystalLight);
+    }
+
+    MediaPlayer smartEnough;
+
+    public void smartEnough(View view){
+        playMedia(smartEnough);
+    }
+
+    MediaPlayer aaron;
+
+    public void aaron(View view){
+        playMedia(aaron);
+    }
+
+    private void playMedia(MediaPlayer mediaPlayer){
+        if (!mediaPlayer.isPlaying()){
+            mediaPlayer.start();
+        }
     }
 }
