@@ -1,6 +1,5 @@
 package space.cyclic.reference.soundbite.app;
 
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -50,6 +49,11 @@ public class MainActivity extends ActionBarActivity {
         crystalLight = MediaPlayer.create(this, R.raw.crystal_light);
         smartEnough = MediaPlayer.create(this, R.raw.smart_enough);
         aaron = MediaPlayer.create(this, R.raw.aaron);
+        murder = MediaPlayer.create(this, R.raw.murder);
+        imNotASmartMan = MediaPlayer.create(this, R.raw.im_not_a_smart_man);
+        butIKnowWhatLoveIs = MediaPlayer.create(this, R.raw.but_i_know_what_love_is);
+        youreGoddamnedRight = MediaPlayer.create(this, R.raw.your_goddamned_right);
+        yeah = MediaPlayer.create(this, R.raw.yeah);
     }
 
     @Override
@@ -169,18 +173,48 @@ public class MainActivity extends ActionBarActivity {
 
     MediaPlayer smartEnough;
 
-    public void smartEnough(View view){
+    public void smartEnough(View view) {
         playMedia(smartEnough);
     }
 
     MediaPlayer aaron;
 
-    public void aaron(View view){
+    public void aaron(View view) {
         playMedia(aaron);
     }
 
-    private void playMedia(MediaPlayer mediaPlayer){
-        if (!mediaPlayer.isPlaying()){
+    MediaPlayer murder;
+
+    public void murder(View view) {
+        playMedia(murder);
+    }
+
+    MediaPlayer imNotASmartMan;
+
+    public void imNotASmartMan(View view) {
+        playMedia(imNotASmartMan);
+    }
+
+    MediaPlayer butIKnowWhatLoveIs;
+
+    public void butIKnowWhatLoveIs(View view) {
+        playMedia(butIKnowWhatLoveIs);
+    }
+
+    MediaPlayer youreGoddamnedRight;
+
+    public void youreGoddamnedRight(View view) {
+        playMedia(youreGoddamnedRight);
+    }
+
+    private MediaPlayer yeah;
+
+    public void yeah(View view) {
+        playMedia(yeah);
+    }
+
+    private void playMedia(MediaPlayer mediaPlayer) {
+        if (!mediaPlayer.isPlaying()) {
             mediaPlayer.start();
         }
     }
